@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 12:41:25 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/26 12:03:28 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/26 17:02:02 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,23 @@ int	ft_printf(const char *intput, ...)
 	va_list	args;
 	int		count;
 
-	if (intput[1] == '\0' && intput[0] == '%')
-		return (0);
-	if (intput[0] == '\0')
-		return (0);
+	if (!intput)
+		return (-1);
+	count = 0;
 	va_start(args, intput);
-	count = ft_parse(intput, args);
+	while (*intput)
+	{
+		if (*intput == '%')
+		{
+			intput++;
+			if (*intput == '\0')
+				break ;
+			count += handle_format_specifier(*intput, args);
+		}
+		else
+			count += ft_putchar(*intput);
+		intput++;
+	}
 	va_end(args);
 	return (count);
 }
@@ -42,7 +53,13 @@ int	main(void)
 	// printf("\n%d", i);
 	// ft_printf("\n%d", g);
 	// return (0);
-	int o = ft_printf("%%%");
-	printf("  %d\n", o);
-	ft_printf("\n");
+	int o = ft_printf("%x\n", 100000);
+	int j = printf("%x\n", 100000);
+	ft_printf("%d\n", o);
+	printf("%d\n", j);
+	// printf("  %d\n", o);
+	// char *s = NULL;
+	// int i  = ft_printf("hello gsvjsx %");
+	// int i  = printf("%q", s );
+	// int count = ft_printf("hello %s gsvjsx %r %", "youssef");
 }

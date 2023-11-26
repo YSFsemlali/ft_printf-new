@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 11:09:04 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/26 11:11:33 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/26 14:47:43 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,8 @@ int	handle_format_specifier(char specifier, va_list args)
 	else if (specifier == '%')
 		return (ft_putchar('%'));
 	else
-		return (0);
+	{
+		ft_printf("%c im here\n", specifier);
+		return (ft_putchar(specifier));
+	}
 }
