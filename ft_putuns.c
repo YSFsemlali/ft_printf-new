@@ -12,10 +12,10 @@
 
 #include "ft_printf.h"
 
-int ft_putuns(unsigned int nb, int count)
+int	ft_putuns(unsigned int nb, int count)
 {
-    if (nb >= 10)
-        count = ft_putuns(nb / 10, count + 1);
-    ft_putchar(nb % 10 + '0');
-    return count + 1;
+	if (nb >= 10)
+		count = ft_putuns(nb / 10, count + 1);
+	ft_putchar(nb % 10 + '0');
+	return (count + 1);
 }

@@ -1,4 +1,4 @@
-SRC= ft_printf.c ft_putchar.c ft_putnbr.c ft_putstr.c ft_putptr.c ft_puthex.c ft_puthexup.c ft_putuns.c ft_parse.c 
+SRC= ft_printf.c ft_parse.c ft_utils.c ft_putchar.c ft_putnbr.c ft_putstr.c ft_putptr.c ft_puthex.c ft_puthexup.c ft_putuns.c 
 OBJ= $(SRC:.c=.o)
 NAME= libftprintf.a
 CC= gcc 
