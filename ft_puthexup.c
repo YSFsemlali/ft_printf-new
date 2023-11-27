@@ -6,19 +6,19 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 14:03:26 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/26 12:02:02 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/26 20:49:17 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_puthexup(unsigned int nb, int count)
+int	ft_puthexup(unsigned int nb, int i)
 {
 	if (nb >= 16)
-		count = ft_puthexup(nb / 16, count + 1);
+		i = ft_puthexup(nb / 16, i);
 	if (nb % 16 < 10)
 		ft_putchar(nb % 16 + '0');
 	else
 		ft_putchar(nb % 16 - 10 + 'A');
-	return (count + 1);
+	return (i + 1);
 }

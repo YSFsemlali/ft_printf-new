@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 12:41:28 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/26 11:10:46 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/26 20:49:04 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int	handle_format_specifier(char specifier, va_list args);
 int	ft_strlen(const char *str);
 int	ft_putchar(char c);
 int	ft_putstr(char *str);
-int	ft_putnbr(int nb, int count);
-int	ft_puthex(unsigned int nb, int count);
-int	ft_puthexup(unsigned int nb, int count);
-int	ft_putptr(void *ptr, int count);
-int	ft_putuns(unsigned int nb, int count);
+int	ft_putnbr(int nb, int i);
+int	ft_puthex(unsigned int nb, int i);
+int	ft_puthexup(unsigned int nb, int i);
+int	ft_putptr(void *ptr, int i);
+int	ft_putuns(unsigned long nb, int i);
 
 #endif

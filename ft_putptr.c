@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 12:41:38 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/26 09:28:40 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/26 18:11:54 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,12 @@ int	ft_putptr(void *ptr, int count)
 	{
 		base = "0123456789abcdef";
 		n = (unsigned long long)ptr;
-		if (count == 1)
-			ft_putstr("0x");
+		if (count == 0)
+			count += ft_putstr("0x");
 		if (n >= 16)
-			count += ft_putptr((void *)(n / 16), count + 1);
+			count = ft_putptr((void *)(n / 16), count);
+		count++;
 		ft_putchar(base[n % 16]);
 	}
-	return (count + 1);
+	return (count);
 }

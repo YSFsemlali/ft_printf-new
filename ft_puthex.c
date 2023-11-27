@@ -6,25 +6,19 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 12:41:34 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/26 17:13:23 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/26 20:49:10 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_puthex(unsigned int nb, int count)
+int	ft_puthex(unsigned int nb, int i)
 {
 	if (nb >= 16)
-		count = ft_puthex(nb / 16, count);
+		i = ft_puthex(nb / 16, i);
 	if (nb % 16 < 10)
-	{
-		ft_putchar(nb % 16 + '0');
-		count++;
-	}
+		i += ft_putchar(nb % 16 + '0');
 	else
-	{
-		ft_putchar(nb % 16 - 10 + 'a');
-		count++;
-	}
-	return (count);
+		i += ft_putchar(nb % 16 - 10 + 'a');
+	return (i);
 }
